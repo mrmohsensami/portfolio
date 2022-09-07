@@ -1,5 +1,6 @@
 <template>
 <div class="container mx-auto">
+    <button @click="darkMode()">Dark/Light</button>
     <div class="flex flex-col md:flex-row pt-10 border-b-4 pb-10 border-dotted">
       <div class="flex flex-col w-full md:w-1/3 justify-end">
         <div class="flex items-center justify-center mx-auto h-64 w-64 md:ml-0 rounded-full bg-gradient-to-r from-green-400 via-blue-500 to-red-500">
@@ -22,7 +23,7 @@
         <div class="flex flex-col gap-4 mx-auto w-2/3 md:w-1/2">
           <p class="text-md font-medium text-gray-700">برنامه نویس فولستک</p>
           <h2 class="text-4xl font-semibold text-gray-800 pb-4" >محسن سامی</h2>
-          <span class="text-sm font-light text-gray-600">من یک فریلنسر و مدرس مجازیم که عاشق برنامه نویسی و چالش های کدزدنی هستم.</span>
+          <span class="text-sm font-light text-gray-600 dark:text-white">من یک فریلنسر و مدرس مجازیم که عاشق برنامه نویسی و چالش های کدزدنی هستم.</span>
         </div>
       </div>
     </div>
@@ -190,6 +191,7 @@
 <script>
   export default {
     data: () => ({
+      // isDark : false,
       skills: [
         {
           component: 'NuxtSvg',
@@ -296,6 +298,11 @@
           tooltip: 'Electron'
         },
       ],
-    })
+    }),
+    methods: {
+      darkMode() {
+        document.documentElement.classList.toggle('dark');
+      }
+    }
   }
   </script>

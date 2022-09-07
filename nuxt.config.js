@@ -10,7 +10,7 @@ export default {
       dir: 'rtl'
     },
     bodyAttrs: {
-      class: 'bg-gray-100'
+      class: 'bg-gray-100 dark:bg-gray-800'
     },
     meta: [
       { charset: 'utf-8' },
@@ -48,6 +48,12 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    transpile: ['vue-tooltip']
+    transpile: ['vue-tooltip'],
+    postcss: {
+      plugins: {
+        tailwindcss: {},
+        autoprefixer: {},
+      },
+    },
   }
 }
